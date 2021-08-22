@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import MainScreen from '../../components/mainScreen';
+import MainScreen from "../../components/mainScreen";
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createStudyAction } from "../../actions/studyActions"
+import { createStudyAction } from "../../actions/studyActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-
 function StudyPage({ history }) {
-  const [assignment, setAssignment] = useState('');
-  const [minutes, setMinutes] = useState('');
-  const [subject, setSubject] = useState('');
-  const [notes, setNotes] = useState('');
+  const [assignment, setAssignment] = useState("");
+  const [minutes, setMinutes] = useState("");
+  const [subject, setSubject] = useState("");
+  const [notes, setNotes] = useState("");
 
   const dispatch = useDispatch();
 
@@ -21,10 +20,10 @@ function StudyPage({ history }) {
   console.log(study);
 
   const resetHandler = () => {
-    setAssignment('');
-    setMinutes('');
-    setSubject('');
-    setNotes('');
+    setAssignment("");
+    setMinutes("");
+    setSubject("");
+    setNotes("");
   };
 
   const submitHandler = (e) => {
@@ -74,7 +73,7 @@ function StudyPage({ history }) {
                 onChange={(e) => setSubject(e.target.value)}
               />
             </Form.Group>
-            
+
             <Form.Group className="mb-3" controlId="content">
               <Form.Label>Notes</Form.Label>
               <Form.Control
